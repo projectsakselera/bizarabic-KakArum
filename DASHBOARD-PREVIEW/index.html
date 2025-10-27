@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BizArabic for ESQ165 - Dashboard Preview</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'saudi-green': '#15803d',
+                        'saudi-green-dark': '#166534',
+                        'arabian-gold': '#f59e0b',
+                        'arabian-gold-dark': '#d97706',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .arabic-text {
+            font-family: 'Noto Naskh Arabic', serif;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .session-card {
+            transition: all 0.3s ease;
+        }
+        .session-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-gradient-to-br from-saudi-green to-arabian-gold rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-lg">BA</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-900">BizArabic for ESQ165</h1>
+                        <p class="text-xs text-gray-500 arabic-text" dir="rtl">من اللغة إلى الثقافة إلى الشراكة</p>
+                    </div>
+                </div>
+
+                <!-- User Menu -->
+                <div class="flex items-center space-x-4">
+                    <button class="p-2 text-gray-400 hover:text-gray-600 relative">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-saudi-green rounded-full flex items-center justify-center">
+                            <span class="text-white text-sm font-semibold">AR</span>
+                        </div>
+                        <div class="hidden md:block">
+                            <p class="text-sm font-medium text-gray-900">Ahmad Rahman</p>
+                            <p class="text-xs text-gray-500">ESQ Trainer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Welcome Section -->
+        <div class="mb-8 animate-fade-in">
+            <h1 class="text-3xl font-bold text-gray-900">السلام عليكم، Ahmad! 👋</h1>
+            <p class="mt-2 text-lg text-gray-600">Welcome back to BizArabic for ESQ165</p>
+            <p class="text-sm text-gray-500 arabic-text" dir="rtl">مرحباً بعودتك إلى برنامج اللغة العربية للأعمال</p>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <!-- Stat 1 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-saudi-green animate-fade-in">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Progress</p>
+                        <p class="text-3xl font-bold text-gray-900">25%</p>
+                    </div>
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-saudi-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-2 text-xs text-gray-500">2 of 8 sessions completed</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-blue-500 animate-fade-in" style="animation-delay: 0.1s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Avg. Score</p>
+                        <p class="text-3xl font-bold text-gray-900">85%</p>
+                    </div>
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-2 text-xs text-gray-500">Across all assessments</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-arabian-gold animate-fade-in" style="animation-delay: 0.2s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Study Time</p>
+                        <p class="text-3xl font-bold text-gray-900">12h</p>
+                    </div>
+                    <div class="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-arabian-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-2 text-xs text-gray-500">This month</p>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="bg-white rounded-lg shadow-sm p-6 border-l-4 border-purple-500 animate-fade-in" style="animation-delay: 0.3s;">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Streak</p>
+                        <p class="text-3xl font-bold text-gray-900">7 🔥</p>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                </div>
+                <p class="mt-2 text-xs text-gray-500">Days in a row</p>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Left Column: Sessions -->
+            <div class="lg:col-span-2 space-y-6">
+
+                <!-- Sessions List -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <div class="flex items-center justify-between mb-6">
+                        <div>
+                            <h2 class="text-2xl font-bold text-gray-900">Learning Sessions</h2>
+                            <p class="text-sm text-gray-500 arabic-text mt-1" dir="rtl">الجلسات التعليمية</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="px-3 py-1 bg-white text-gray-900 rounded-md text-sm font-medium shadow-sm">Grid</button>
+                            <button class="px-3 py-1 text-gray-600 rounded-md text-sm font-medium hover:bg-gray-100">List</button>
+                        </div>
+                    </div>
+
+                    <!-- Session Cards Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <!-- Session 1 - Completed -->
+                        <div class="session-card relative rounded-lg border-2 border-green-500 bg-green-50 p-6">
+                            <div class="absolute top-4 right-4 w-10 h-10 bg-saudi-green rounded-full flex items-center justify-center">
+                                <span class="text-sm font-bold text-white">1</span>
+                            </div>
+                            <div class="mb-4">
+                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-1 pr-12">Opening Doors</h3>
+                            <p class="text-sm text-gray-600 mb-2 arabic-text" dir="rtl">فتح الأبواب</p>
+                            <p class="text-xs text-gray-500 mb-4">Introductions & First Impressions</p>
+                            <span class="inline-block px-2 py-1 text-xs font-medium rounded bg-green-100 text-green-700">Foundation</span>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between text-xs text-gray-600 mb-1">
+                                    <span>Completed</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-green-600 h-2 rounded-full" style="width: 100%"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-center space-x-4 text-xs text-gray-500">
+                                <div class="flex items-center space-x-1">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                    </svg>
+                                    <span>28 words</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span>1 quiz</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Session 2 - In Progress -->
+                        <div class="session-card relative rounded-lg border-2 border-yellow-400 bg-yellow-50 p-6">
+                            <div class="absolute top-4 right-4 w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
+                                <span class="text-sm font-bold text-white">2</span>
+                            </div>
+                            <div class="mb-4">
+                                <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-1 pr-12">Building Connections</h3>
+                            <p class="text-sm text-gray-600 mb-2 arabic-text" dir="rtl">بناء العلاقات</p>
+                            <p class="text-xs text-gray-500 mb-4">Small Talk & Professional Courtesy</p>
+                            <span class="inline-block px-2 py-1 text-xs font-medium rounded bg-blue-100 text-blue-700">Foundation</span>
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between text-xs text-gray-600 mb-1">
+                                    <span>In Progress</span>
+                                    <span>67%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-yellow-600 h-2 rounded-full" style="width: 67%"></div>
+                                </div>
+                            </div>
+                            <div class="mt-4 flex items-center space-x-4 text-xs text-gray-500">
+                                <div class="flex items-center space-x-1">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                    </svg>
+                                    <span>35 words</span>
+                                </div>
+                                <div class="flex items-center space-x-1">
+                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                    </svg>
+                                    <span>1 quiz</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Session 3 - Locked -->
+                        <div class="session-card relative rounded-lg border-2 border-gray-200 bg-gray-50 p-6 opacity-60">
+                            <div class="absolute top-4 right-4 w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+                                <span class="text-sm font-bold text-white">3</span>
+                            </div>
+                            <div class="mb-4">
+                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-1 pr-12">Time & Communication</h3>
+                            <p class="text-sm text-gray-600 mb-2 arabic-text" dir="rtl">الوقت والتواصل</p>
+                            <p class="text-xs text-gray-500 mb-4">Scheduling & Phone Etiquette</p>
+                            <span class="inline-block px-2 py-1 text-xs font-medium rounded bg-purple-100 text-purple-700">Practical Skills</span>
+                            <p class="mt-4 text-xs text-gray-500 italic">Complete Session 2 to unlock</p>
+                        </div>
+
+                        <!-- Session 4 - Locked -->
+                        <div class="session-card relative rounded-lg border-2 border-gray-200 bg-gray-50 p-6 opacity-60">
+                            <div class="absolute top-4 right-4 w-10 h-10 bg-purple-600 rounded-full flex items-center justify-center">
+                                <span class="text-sm font-bold text-white">4</span>
+                            </div>
+                            <div class="mb-4">
+                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-gray-900 mb-1 pr-12">Workplace Talk</h3>
+                            <p class="text-sm text-gray-600 mb-2 arabic-text" dir="rtl">حديث مكان العمل</p>
+                            <p class="text-xs text-gray-500 mb-4">Office Vocabulary & Daily Interactions</p>
+                            <span class="inline-block px-2 py-1 text-xs font-medium rounded bg-purple-100 text-purple-700">Practical Skills</span>
+                            <p class="mt-4 text-xs text-gray-500 italic">Complete Session 3 to unlock</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Progression Info -->
+                    <div class="mt-6 p-4 bg-gradient-to-r from-green-50 to-yellow-50 rounded-lg border border-green-200">
+                        <div class="flex items-start space-x-3">
+                            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <div>
+                                <p class="text-sm font-medium text-gray-900">Complete Level 1 to Unlock Intermediate Sessions</p>
+                                <p class="text-xs text-gray-600 mt-1">After finishing Session 8, you'll access 12 more sessions in Level 2 & 3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <div class="space-y-6">
+
+                <!-- Upcoming Assignments -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Upcoming Assignments</h3>
+                    <div class="space-y-3">
+                        <div class="p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <div class="flex items-start justify-between">
+                                <div class="flex-1">
+                                    <p class="text-sm font-medium text-gray-900">Session 2 Audio Dialogue</p>
+                                    <p class="text-xs text-gray-500 mt-1">Record small talk conversation</p>
+                                </div>
+                                <span class="text-xs font-medium text-yellow-700 bg-yellow-100 px-2 py-1 rounded">Due in 2 days</span>
+                            </div>
+                        </div>
+                        <div class="p-3 bg-gray-50 border border-gray-200 rounded-lg">
+                            <p class="text-sm font-medium text-gray-900">Session 2 Quiz</p>
+                            <p class="text-xs text-gray-500 mt-1">4-skills assessment</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="flex items-center justify-between p-3 rounded-lg border border-gray-200 hover:border-green-500 hover:bg-green-50 transition-all group">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Practice Flashcards</p>
+                                    <p class="text-xs text-gray-500 arabic-text" dir="rtl">مراجعة البطاقات</p>
+                                </div>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-3 rounded-lg border border-gray-200 hover:border-green-500 hover:bg-green-50 transition-all group">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Pronunciation Coach</p>
+                                    <p class="text-xs text-gray-500 arabic-text" dir="rtl">مدرب النطق</p>
+                                </div>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-3 rounded-lg border border-gray-200 hover:border-green-500 hover:bg-green-50 transition-all group">
+                            <div class="flex items-center space-x-3">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                                </svg>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Resources Library</p>
+                                    <p class="text-xs text-gray-500 arabic-text" dir="rtl">مكتبة الموارد</p>
+                                </div>
+                            </div>
+                            <svg class="w-4 h-4 text-gray-400 group-hover:text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- AI Chat Widget (Floating Button) -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="w-14 h-14 bg-gradient-to-br from-saudi-green to-arabian-gold rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path>
+            </svg>
+        </button>
+    </div>
+
+</body>
+</html>
