@@ -1,6 +1,12 @@
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Home() {
+  const [showSyllabusModal, setShowSyllabusModal] = useState(false)
+  const [showResourcesModal, setShowResourcesModal] = useState(false)
+
   return (
     <div className="min-h-screen">
       {/* Header with Logos */}
@@ -235,16 +241,755 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Feature Cards akan dilanjutkan di message berikutnya */}
-      <p className="text-center text-gray-600 py-8">Loading feature cards...</p>
+      {/* Main Content - Feature Boxes */}
+      <main className="max-w-7xl mx-auto px-8 py-8">
+        <div className="grid md:grid-cols-3 gap-6 mb-8">
+          {/* Silabus */}
+          <div className="feature-card bg-white border-2 border-arabi-green/30 rounded-xl p-6 hover:border-arabi-green hover:shadow-xl transition-all relative">
+            {/* Background Icon */}
+            <div className="absolute top-4 right-4 opacity-5">
+              <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+              </svg>
+            </div>
+            <div className="flex items-center justify-between mb-4 relative z-10">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                <svg className="w-7 h-7 mr-2 text-arabi-green" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                </svg>
+                Silabus
+              </h2>
+              <span className="bg-gradient-to-r from-arabi-green to-arabi-green/80 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">8 Sessions</span>
+            </div>
+            <p className="text-gray-600 text-sm mb-4">Complete training curriculum from foundations to advanced business Arabic</p>
+            <ul className="space-y-2 text-sm text-gray-700 mb-4">
+              <li className="flex items-start">
+                <span className="text-arabi-green mr-2 font-bold">✓</span>
+                <span>Phase 1: Foundation (Sessions 1-4)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-arabi-green mr-2 font-bold">✓</span>
+                <span>Phase 2: Application (Sessions 5-6)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-arabi-green mr-2 font-bold">✓</span>
+                <span>Phase 3: Integration (Sessions 7-8)</span>
+              </li>
+            </ul>
+            <button
+              onClick={() => setShowSyllabusModal(true)}
+              className="w-full bg-gradient-to-r from-arabi-green to-arabi-green/90 text-white py-2 rounded-lg hover:shadow-lg transition font-semibold"
+            >
+              View Full Syllabus
+            </button>
+          </div>
+
+          {/* Downloads & Resources */}
+          <div className="feature-card bg-white border-2 border-arabi-orange/30 rounded-xl p-6 hover:border-arabi-orange hover:shadow-xl transition-all relative">
+            {/* Background Icon */}
+            <div className="absolute top-4 right-4 opacity-5">
+              <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z" clipRule="evenodd"/>
+              </svg>
+            </div>
+            <div className="flex items-center justify-between mb-4 relative z-10">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                <svg className="w-7 h-7 mr-2 text-arabi-orange" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
+                </svg>
+                Downloads & Resources
+              </h2>
+              <span className="bg-gradient-to-r from-arabi-orange to-arabi-orange/80 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">24 Files</span>
+            </div>
+            <p className="text-gray-600 text-sm mb-4">Access all learning materials, modules, and presentation slides</p>
+            <div className="space-y-2 text-sm mb-4">
+              <div className="flex items-center justify-between bg-gradient-to-r from-arabi-orange/5 to-arabi-orange/10 p-2 rounded-lg">
+                <span className="text-gray-700">📄 Learning Modules</span>
+                <span className="text-xs font-semibold text-arabi-orange">8 files</span>
+              </div>
+              <div className="flex items-center justify-between bg-gradient-to-r from-arabi-orange/5 to-arabi-orange/10 p-2 rounded-lg">
+                <span className="text-gray-700">🎯 Presentation Slides</span>
+                <span className="text-xs font-semibold text-arabi-orange">8 files</span>
+              </div>
+              <div className="flex items-center justify-between bg-gradient-to-r from-arabi-orange/5 to-arabi-orange/10 p-2 rounded-lg">
+                <span className="text-gray-700">🎧 Audio Resources</span>
+                <span className="text-xs font-semibold text-arabi-orange">8 files</span>
+              </div>
+            </div>
+            <button
+              onClick={() => setShowResourcesModal(true)}
+              className="w-full bg-gradient-to-r from-arabi-orange to-arabi-orange/90 text-white py-2 rounded-lg hover:shadow-lg transition font-semibold"
+            >
+              Browse Resources
+            </button>
+          </div>
+
+          {/* Quiz/Assessment */}
+          <div className="feature-card bg-white border-2 border-primehub-navy/30 rounded-xl p-6 hover:border-primehub-navy hover:shadow-xl transition-all relative">
+            {/* Background Icon */}
+            <div className="absolute top-4 right-4 opacity-5">
+              <svg className="w-32 h-32" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"/>
+              </svg>
+            </div>
+            <div className="flex items-center justify-between mb-4 relative z-10">
+              <h2 className="text-xl font-bold text-gray-900 flex items-center">
+                <svg className="w-7 h-7 mr-2 text-primehub-navy" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd"/>
+                </svg>
+                Quiz & Assessment
+              </h2>
+              <span className="bg-gradient-to-r from-primehub-navy to-primehub-blue text-white text-xs font-semibold px-3 py-1 rounded-full shadow">8 Tests</span>
+            </div>
+            <p className="text-gray-600 text-sm mb-4">4-skills assessments (Listening, Reading, Writing, Speaking) + Cultural Competence</p>
+            <ul className="space-y-2 text-sm text-gray-700 mb-4">
+              <li className="flex items-center justify-between bg-gray-50 p-2 rounded-lg">
+                <span>📊 Pre-Test</span>
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded">Not Started</span>
+              </li>
+              <li className="flex items-center justify-between bg-arabi-green/5 p-2 rounded-lg">
+                <span>✅ Session Quizzes (1-8)</span>
+                <span className="text-xs bg-arabi-green text-white px-2 py-1 rounded font-semibold">2/8 Done</span>
+              </li>
+              <li className="flex items-center justify-between bg-gray-50 p-2 rounded-lg">
+                <span>🎓 Final Assessment</span>
+                <span className="text-xs bg-gray-200 px-2 py-1 rounded">Locked</span>
+              </li>
+            </ul>
+            <button
+              disabled
+              className="w-full bg-gray-300 text-gray-500 py-2 rounded-lg cursor-not-allowed font-semibold"
+            >
+              Coming Soon
+            </button>
+          </div>
+
+          {/* AI Arabic Conversation Partner */}
+          <div className="feature-card bg-gradient-to-br from-primehub-blue via-arabi-green to-gold-accent text-white rounded-xl p-6 shadow-xl">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold flex items-center">
+                🤖 AI Conversation Partner
+              </h2>
+              <span className="bg-white/20 text-white text-xs font-semibold px-3 py-1 rounded-full animate-pulse">POWERED BY AI</span>
+            </div>
+            <p className="text-white/90 text-sm mb-4 font-medium">Your 24/7 Arabic practice companion with instant feedback</p>
+
+            {/* Key Features */}
+            <div className="space-y-3 text-sm mb-4">
+              <div className="bg-white/15 backdrop-blur-sm p-3 rounded-lg border border-white/20">
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">🎤</span>
+                  <div>
+                    <span className="font-semibold block mb-1">Voice Practice Mode</span>
+                    <p className="text-xs text-white/90">Speak in Arabic, get instant pronunciation correction & natural responses from AI</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white/15 backdrop-blur-sm p-3 rounded-lg border border-white/20">
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">☕</span>
+                  <div>
+                    <span className="font-semibold block mb-1">Business Scenarios</span>
+                    <p className="text-xs text-white/90">Coffee meetings, phone calls, negotiations, presentations - practice real business situations</p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-white/15 backdrop-blur-sm p-3 rounded-lg border border-white/20">
+                <div className="flex items-start">
+                  <span className="text-2xl mr-3">🎯</span>
+                  <div>
+                    <span className="font-semibold block mb-1">Cultural Intelligence Feedback</span>
+                    <p className="text-xs text-white/90">Learn not just language, but Saudi cultural etiquette & business norms</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Stats Preview */}
+            <div className="grid grid-cols-3 gap-2 mb-4 text-center text-xs">
+              <div className="bg-white/10 p-2 rounded">
+                <div className="font-bold text-lg">24/7</div>
+                <div className="text-white/70">Available</div>
+              </div>
+              <div className="bg-white/10 p-2 rounded">
+                <div className="font-bold text-lg">∞</div>
+                <div className="text-white/70">Practice</div>
+              </div>
+              <div className="bg-white/10 p-2 rounded">
+                <div className="font-bold text-lg">⚡</div>
+                <div className="text-white/70">Instant</div>
+              </div>
+            </div>
+
+            <button
+              disabled
+              className="w-full bg-white/30 text-white/50 py-3 rounded-lg cursor-not-allowed font-bold"
+            >
+              Coming Soon
+            </button>
+            <p className="text-xs text-white/50 text-center mt-2">
+              💡 Feature will be available soon
+            </p>
+          </div>
+
+          {/* Feedback & Evaluation */}
+          <div className="feature-card bg-white border-2 border-green-500/30 rounded-lg p-6 hover:border-green-500">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-xl font-bold text-gray-900">⭐ Feedback & Evaluation</h2>
+              <span className="bg-green-500 text-white text-xs font-semibold px-3 py-1 rounded-full">Live</span>
+            </div>
+            <p className="text-gray-600 text-sm mb-4">Share your experience and get personalized feedback from trainers</p>
+            <ul className="space-y-2 text-sm text-gray-700 mb-4">
+              <li className="flex items-start">
+                <span className="text-green-500 mr-2">📋</span>
+                <span>Session feedback forms (after each session)</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-500 mr-2">💬</span>
+                <span>Trainer evaluation & personalized comments</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-green-500 mr-2">📊</span>
+                <span>Progress reports & recommendations</span>
+              </li>
+            </ul>
+            <button
+              disabled
+              className="w-full bg-gray-300 text-gray-500 py-2 rounded-lg cursor-not-allowed font-semibold"
+            >
+              Coming Soon
+            </button>
+          </div>
+
+          {/* Empty slot for potential future feature */}
+          <div className="feature-card bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg p-6 border-2 border-dashed border-gray-300">
+            <div className="text-center py-8">
+              <div className="text-6xl mb-4">💡</div>
+              <h3 className="text-lg font-semibold text-gray-600 mb-2">More Features Coming Soon</h3>
+              <p className="text-sm text-gray-500">Additional learning tools and resources will be added here</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Training Outline / Workshop Rundown */}
+        <div className="bg-white border-2 border-gray-200 rounded-xl p-8 shadow-lg">
+          <h2 className="text-2xl font-bold bg-gradient-to-r from-arabi-green to-primehub-navy bg-clip-text text-transparent mb-6 flex items-center">
+            <span className="text-3xl mr-3">📋</span> Training Outline / Workshop Rundown
+          </h2>
+
+          <div className="space-y-4">
+            {/* Phase 1: Foundation */}
+            <div className="border-l-4 border-arabi-green pl-6 pb-6">
+              <h3 className="text-lg font-bold text-arabi-green mb-4">Phase 1: Foundation (Weeks 1-2)</h3>
+
+              {/* Session 1 */}
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-green-500 text-white text-sm font-bold px-3 py-1 rounded-full">Session 1</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Opening Doors: First Impressions</h4>
+                    </div>
+                    <p className="arabic-text text-green-700 mb-2" dir="rtl">فتح الأبواب: الانطباعات الأولى</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Greetings, introductions, business card exchange, thanking, apologizing</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Tuesday, Oct 7, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">✅ Status:</span> <span className="text-green-600 font-semibold">Completed</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Session 2 */}
+              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-yellow-500 text-white text-sm font-bold px-3 py-1 rounded-full">Session 2</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Building Connections: Small Talk</h4>
+                    </div>
+                    <p className="arabic-text text-yellow-700 mb-2" dir="rtl">بناء العلاقات: الحديث الصغير</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Coffee ritual, relationship building (takarrub), compliments, weather talk</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Thursday, Oct 9, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏳ Status:</span> <span className="text-yellow-600 font-semibold">In Progress</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Session 3 */}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-gray-400 text-white text-sm font-bold px-3 py-1 rounded-full">Session 3</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Time & Communication</h4>
+                    </div>
+                    <p className="arabic-text text-gray-700 mb-2" dir="rtl">الوقت والتواصل</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Telling time, scheduling meetings, phone etiquette, prayer times, polychronic culture</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Tuesday, Oct 14, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">🔒 Status:</span> <span className="text-gray-500 font-semibold">Locked</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Session 4 */}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-gray-400 text-white text-sm font-bold px-3 py-1 rounded-full">Session 4</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Workplace Talk</h4>
+                    </div>
+                    <p className="arabic-text text-gray-700 mb-2" dir="rtl">محادثات مكان العمل</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Requests, instructions, project discussions, office courtesy, hierarchy respect</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Thursday, Oct 16, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">🔒 Status:</span> <span className="text-gray-500 font-semibold">Locked</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 2: Application */}
+            <div className="border-l-4 border-arabi-orange pl-6 pb-6">
+              <h3 className="text-lg font-bold text-arabi-orange mb-4">Phase 2: Application (Weeks 3-4)</h3>
+
+              {/* Session 5 */}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-gray-400 text-white text-sm font-bold px-3 py-1 rounded-full">Session 5</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Business Correspondence</h4>
+                    </div>
+                    <p className="arabic-text text-gray-700 mb-2" dir="rtl">المراسلات التجارية</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Email writing, formal letters, WhatsApp etiquette, professional tone</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Tuesday, Oct 21, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">🔒 Status:</span> <span className="text-gray-500 font-semibold">Locked</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Session 6 */}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-gray-400 text-white text-sm font-bold px-3 py-1 rounded-full">Session 6</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Requests & Negotiations</h4>
+                    </div>
+                    <p className="arabic-text text-gray-700 mb-2" dir="rtl">الطلبات والمفاوضات</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Making proposals, agreeing/disagreeing, haggling culture, finding middle ground</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Thursday, Oct 23, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">🔒 Status:</span> <span className="text-gray-500 font-semibold">Locked</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 3: Integration */}
+            <div className="border-l-4 border-primehub-navy pl-6">
+              <h3 className="text-lg font-bold text-primehub-navy mb-4">Phase 3: Integration (Week 5)</h3>
+
+              {/* Session 7 */}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-3">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-gray-400 text-white text-sm font-bold px-3 py-1 rounded-full">Session 7</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Meeting Essentials</h4>
+                    </div>
+                    <p className="arabic-text text-gray-700 mb-2" dir="rtl">أساسيات الاجتماعات</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Meeting protocols, consensus building, turn-taking, documenting decisions</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Tuesday, Oct 28, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">🔒 Status:</span> <span className="text-gray-500 font-semibold">Locked</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Session 8 */}
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                <div className="flex items-start justify-between">
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-2">
+                      <span className="bg-gray-400 text-white text-sm font-bold px-3 py-1 rounded-full">Session 8</span>
+                      <h4 className="text-lg font-semibold text-gray-900">Presentation & Final Project</h4>
+                    </div>
+                    <p className="arabic-text text-gray-700 mb-2" dir="rtl">العرض والمشروع النهائي</p>
+                    <p className="text-sm text-gray-600 mb-3"><strong>Topics:</strong> Business presentation skills, pitch delivery, final assessment, certification</p>
+                    <div className="grid md:grid-cols-3 gap-2 text-xs">
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">📅 Date:</span> Thursday, Oct 30, 2025
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">⏰ Time:</span> 16:00 - 17:00 WIB
+                      </div>
+                      <div className="bg-white p-2 rounded">
+                        <span className="font-semibold">🔒 Status:</span> <span className="text-gray-500 font-semibold">Locked</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-300 py-8 mt-12">
         <div className="max-w-7xl mx-auto px-8 text-center">
           <p className="text-sm mb-2">Powered by <span className="text-white font-semibold">Akselera Tech</span></p>
           <p className="text-xs text-gray-500">AI-Powered Learning Management System for Corporate Training</p>
+          <div className="mt-4 flex items-center justify-center space-x-4 text-xs">
+            <a href="#" className="hover:text-white transition">Support</a>
+            <span>•</span>
+            <a href="#" className="hover:text-white transition">Privacy Policy</a>
+            <span>•</span>
+            <a href="#" className="hover:text-white transition">Terms of Service</a>
+          </div>
         </div>
       </footer>
+
+      {/* Modal Silabus */}
+      {showSyllabusModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-arabi-green to-arabi-green/90 text-white p-6 flex items-center justify-between">
+              <div className="flex items-center">
+                <svg className="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                </svg>
+                <div>
+                  <h2 className="text-2xl font-bold">Silabus BizArabic for ESQ Team</h2>
+                  <p className="text-sm text-white/80">Complete Training Curriculum - 8 Sessions</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowSyllabusModal(false)}
+                className="text-white/80 hover:text-white transition"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="overflow-y-auto max-h-[calc(90vh-100px)] p-6">
+              <div className="space-y-6">
+                {/* Phase 1 */}
+                <div>
+                  <h3 className="text-xl font-bold text-arabi-green mb-4 pb-2 border-b-2 border-arabi-green">
+                    Phase 1: Foundation (Sessions 1-4)
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 1: Opening Doors - First Impressions</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">فتح الأبواب: الانطباعات الأولى</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Greetings & introductions (السلام عليكم)</li>
+                        <li>• Business card exchange etiquette</li>
+                        <li>• Thanking & apologizing phrases</li>
+                        <li>• Understanding titles and respect (adab)</li>
+                      </ul>
+                    </div>
+                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 2: Building Connections - Small Talk</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">بناء العلاقات: الحديث الصغير</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Coffee ritual & hospitality (karam)</li>
+                        <li>• Relationship building (takarrub)</li>
+                        <li>• Asking about health & family</li>
+                        <li>• Compliments & weather talk</li>
+                      </ul>
+                    </div>
+                    <div className="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 3: Time & Communication</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">الوقت والتواصل</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Telling time & scheduling meetings</li>
+                        <li>• Phone etiquette in Arabic</li>
+                        <li>• Prayer times awareness</li>
+                        <li>• Understanding polychronic culture</li>
+                      </ul>
+                    </div>
+                    <div className="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 4: Workplace Talk</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">محادثات مكان العمل</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Making requests & giving instructions</li>
+                        <li>• Project discussions vocabulary</li>
+                        <li>• Office courtesy phrases</li>
+                        <li>• Respecting hierarchy in communication</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 2 */}
+                <div>
+                  <h3 className="text-xl font-bold text-arabi-orange mb-4 pb-2 border-b-2 border-arabi-orange">
+                    Phase 2: Application (Sessions 5-6)
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 5: Business Correspondence</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">المراسلات التجارية</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Email writing in Arabic</li>
+                        <li>• Formal letter structures</li>
+                        <li>• WhatsApp business etiquette</li>
+                        <li>• Professional tone guidelines</li>
+                      </ul>
+                    </div>
+                    <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 6: Requests & Negotiations</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">الطلبات والمفاوضات</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Making proposals politely</li>
+                        <li>• Agreeing & disagreeing phrases</li>
+                        <li>• Understanding haggling culture</li>
+                        <li>• Finding middle ground techniques</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Phase 3 */}
+                <div>
+                  <h3 className="text-xl font-bold text-primehub-navy mb-4 pb-2 border-b-2 border-primehub-navy">
+                    Phase 3: Integration (Sessions 7-8)
+                  </h3>
+                  <div className="space-y-3">
+                    <div className="bg-cyan-50 border-l-4 border-cyan-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 7: Meeting Essentials</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">أساسيات الاجتماعات</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Meeting protocols & formalities</li>
+                        <li>• Consensus building approaches</li>
+                        <li>• Turn-taking in discussions</li>
+                        <li>• Documenting decisions properly</li>
+                      </ul>
+                    </div>
+                    <div className="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
+                      <h4 className="font-bold text-gray-900">Session 8: Presentation & Final Project</h4>
+                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">العرض والمشروع النهائي</p>
+                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
+                        <li>• Business presentation skills</li>
+                        <li>• Pitch delivery techniques</li>
+                        <li>• Final assessment & evaluation</li>
+                        <li>• Program certification ceremony</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 flex justify-end">
+              <button
+                onClick={() => setShowSyllabusModal(false)}
+                className="bg-arabi-green text-white px-6 py-2 rounded-lg hover:bg-arabi-green/90 transition font-semibold"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Modal Download Resources */}
+      {showResourcesModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+            {/* Modal Header */}
+            <div className="bg-gradient-to-r from-arabi-orange to-arabi-orange/90 text-white p-6 flex items-center justify-between">
+              <div className="flex items-center">
+                <svg className="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
+                </svg>
+                <div>
+                  <h2 className="text-2xl font-bold">Downloads & Resources</h2>
+                  <p className="text-sm text-white/80">Access all learning materials - 24 Files Available</p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowResourcesModal(false)}
+                className="text-white/80 hover:text-white transition"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Modal Content */}
+            <div className="overflow-y-auto max-h-[calc(90vh-100px)] p-6">
+              <div className="space-y-6">
+                {/* Learning Modules */}
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                    <span className="text-2xl mr-2">📄</span>
+                    Learning Modules (8 files)
+                  </h3>
+                  <div className="space-y-2">
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                      <div key={`module-${num}`} className="bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-arabi-orange rounded-lg p-3 flex items-center justify-between transition group">
+                        <div className="flex items-center flex-1">
+                          <div className="w-10 h-10 bg-arabi-orange/10 rounded-lg flex items-center justify-center mr-3">
+                            <svg className="w-5 h-5 text-arabi-orange" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-900">Module Session {num}.pdf</p>
+                            <p className="text-xs text-gray-500">Learning material for session {num}</p>
+                          </div>
+                        </div>
+                        <button className="bg-arabi-orange/10 group-hover:bg-arabi-orange text-arabi-orange group-hover:text-white px-4 py-2 rounded-lg transition text-sm font-semibold">
+                          Download
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Presentation Slides */}
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                    <span className="text-2xl mr-2">🎯</span>
+                    Presentation Slides (8 files)
+                  </h3>
+                  <div className="space-y-2">
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                      <div key={`slide-${num}`} className="bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-arabi-orange rounded-lg p-3 flex items-center justify-between transition group">
+                        <div className="flex items-center flex-1">
+                          <div className="w-10 h-10 bg-arabi-orange/10 rounded-lg flex items-center justify-center mr-3">
+                            <svg className="w-5 h-5 text-arabi-orange" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-900">Presentation Session {num}.pptx</p>
+                            <p className="text-xs text-gray-500">Slides for session {num} lecture</p>
+                          </div>
+                        </div>
+                        <button className="bg-arabi-orange/10 group-hover:bg-arabi-orange text-arabi-orange group-hover:text-white px-4 py-2 rounded-lg transition text-sm font-semibold">
+                          Download
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Audio Resources */}
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                    <span className="text-2xl mr-2">🎧</span>
+                    Audio Resources (8 files)
+                  </h3>
+                  <div className="space-y-2">
+                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+                      <div key={`audio-${num}`} className="bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-arabi-orange rounded-lg p-3 flex items-center justify-between transition group">
+                        <div className="flex items-center flex-1">
+                          <div className="w-10 h-10 bg-arabi-orange/10 rounded-lg flex items-center justify-center mr-3">
+                            <svg className="w-5 h-5 text-arabi-orange" fill="currentColor" viewBox="0 0 20 20">
+                              <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                            </svg>
+                          </div>
+                          <div>
+                            <p className="font-semibold text-gray-900">Audio Dialogue Session {num}.mp3</p>
+                            <p className="text-xs text-gray-500">Pronunciation practice for session {num}</p>
+                          </div>
+                        </div>
+                        <button className="bg-arabi-orange/10 group-hover:bg-arabi-orange text-arabi-orange group-hover:text-white px-4 py-2 rounded-lg transition text-sm font-semibold">
+                          Download
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Modal Footer */}
+            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 flex justify-between items-center">
+              <p className="text-sm text-gray-600">
+                <span className="font-semibold">Total:</span> 24 files available for download
+              </p>
+              <button
+                onClick={() => setShowResourcesModal(false)}
+                className="bg-arabi-orange text-white px-6 py-2 rounded-lg hover:bg-arabi-orange/90 transition font-semibold"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
