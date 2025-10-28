@@ -1,11 +1,8 @@
 'use client'
 
 import Image from 'next/image'
-import { useState } from 'react'
 
 export default function Home() {
-  const [showSyllabusModal, setShowSyllabusModal] = useState(false)
-  const [showResourcesModal, setShowResourcesModal] = useState(false)
 
   return (
     <div className="min-h-screen">
@@ -276,12 +273,12 @@ export default function Home() {
                 <span>Phase 3: Integration (Sessions 7-8)</span>
               </li>
             </ul>
-            <button
-              onClick={() => setShowSyllabusModal(true)}
-              className="w-full bg-gradient-to-r from-arabi-green to-arabi-green/90 text-white py-2 rounded-lg hover:shadow-lg transition font-semibold"
+            <a
+              href="/silabus"
+              className="block w-full bg-gradient-to-r from-arabi-green to-arabi-green/90 text-white py-2 rounded-lg hover:shadow-lg transition font-semibold text-center"
             >
               View Full Syllabus
-            </button>
+            </a>
           </div>
 
           {/* Downloads & Resources */}
@@ -299,7 +296,7 @@ export default function Home() {
                 </svg>
                 Downloads & Resources
               </h2>
-              <span className="bg-gradient-to-r from-arabi-orange to-arabi-orange/80 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">24 Files</span>
+              <span className="bg-gradient-to-r from-arabi-orange to-arabi-orange/80 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">16 Files</span>
             </div>
             <p className="text-gray-600 text-sm mb-4">Access all learning materials, modules, and presentation slides</p>
             <div className="space-y-2 text-sm mb-4">
@@ -311,17 +308,13 @@ export default function Home() {
                 <span className="text-gray-700">🎯 Presentation Slides</span>
                 <span className="text-xs font-semibold text-arabi-orange">8 files</span>
               </div>
-              <div className="flex items-center justify-between bg-gradient-to-r from-arabi-orange/5 to-arabi-orange/10 p-2 rounded-lg">
-                <span className="text-gray-700">🎧 Audio Resources</span>
-                <span className="text-xs font-semibold text-arabi-orange">8 files</span>
-              </div>
             </div>
-            <button
-              onClick={() => setShowResourcesModal(true)}
-              className="w-full bg-gradient-to-r from-arabi-orange to-arabi-orange/90 text-white py-2 rounded-lg hover:shadow-lg transition font-semibold"
+            <a
+              href="/resources"
+              className="block w-full bg-gradient-to-r from-arabi-orange to-arabi-orange/90 text-white py-2 rounded-lg hover:shadow-lg transition font-semibold text-center"
             >
               Browse Resources
-            </button>
+            </a>
           </div>
 
           {/* Quiz/Assessment */}
@@ -710,286 +703,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-
-      {/* Modal Silabus */}
-      {showSyllabusModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
-            {/* Modal Header */}
-            <div className="bg-gradient-to-r from-arabi-green to-arabi-green/90 text-white p-6 flex items-center justify-between">
-              <div className="flex items-center">
-                <svg className="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-                </svg>
-                <div>
-                  <h2 className="text-2xl font-bold">Silabus BizArabic for ESQ Team</h2>
-                  <p className="text-sm text-white/80">Complete Training Curriculum - 8 Sessions</p>
-                </div>
-              </div>
-              <button
-                onClick={() => setShowSyllabusModal(false)}
-                className="text-white/80 hover:text-white transition"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Modal Content */}
-            <div className="overflow-y-auto max-h-[calc(90vh-100px)] p-6">
-              <div className="space-y-6">
-                {/* Phase 1 */}
-                <div>
-                  <h3 className="text-xl font-bold text-arabi-green mb-4 pb-2 border-b-2 border-arabi-green">
-                    Phase 1: Foundation (Sessions 1-4)
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 1: Opening Doors - First Impressions</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">فتح الأبواب: الانطباعات الأولى</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Greetings & introductions (السلام عليكم)</li>
-                        <li>• Business card exchange etiquette</li>
-                        <li>• Thanking & apologizing phrases</li>
-                        <li>• Understanding titles and respect (adab)</li>
-                      </ul>
-                    </div>
-                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 2: Building Connections - Small Talk</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">بناء العلاقات: الحديث الصغير</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Coffee ritual & hospitality (karam)</li>
-                        <li>• Relationship building (takarrub)</li>
-                        <li>• Asking about health & family</li>
-                        <li>• Compliments & weather talk</li>
-                      </ul>
-                    </div>
-                    <div className="bg-purple-50 border-l-4 border-purple-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 3: Time & Communication</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">الوقت والتواصل</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Telling time & scheduling meetings</li>
-                        <li>• Phone etiquette in Arabic</li>
-                        <li>• Prayer times awareness</li>
-                        <li>• Understanding polychronic culture</li>
-                      </ul>
-                    </div>
-                    <div className="bg-indigo-50 border-l-4 border-indigo-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 4: Workplace Talk</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">محادثات مكان العمل</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Making requests & giving instructions</li>
-                        <li>• Project discussions vocabulary</li>
-                        <li>• Office courtesy phrases</li>
-                        <li>• Respecting hierarchy in communication</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Phase 2 */}
-                <div>
-                  <h3 className="text-xl font-bold text-arabi-orange mb-4 pb-2 border-b-2 border-arabi-orange">
-                    Phase 2: Application (Sessions 5-6)
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 5: Business Correspondence</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">المراسلات التجارية</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Email writing in Arabic</li>
-                        <li>• Formal letter structures</li>
-                        <li>• WhatsApp business etiquette</li>
-                        <li>• Professional tone guidelines</li>
-                      </ul>
-                    </div>
-                    <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 6: Requests & Negotiations</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">الطلبات والمفاوضات</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Making proposals politely</li>
-                        <li>• Agreeing & disagreeing phrases</li>
-                        <li>• Understanding haggling culture</li>
-                        <li>• Finding middle ground techniques</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Phase 3 */}
-                <div>
-                  <h3 className="text-xl font-bold text-primehub-navy mb-4 pb-2 border-b-2 border-primehub-navy">
-                    Phase 3: Integration (Sessions 7-8)
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="bg-cyan-50 border-l-4 border-cyan-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 7: Meeting Essentials</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">أساسيات الاجتماعات</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Meeting protocols & formalities</li>
-                        <li>• Consensus building approaches</li>
-                        <li>• Turn-taking in discussions</li>
-                        <li>• Documenting decisions properly</li>
-                      </ul>
-                    </div>
-                    <div className="bg-teal-50 border-l-4 border-teal-500 p-4 rounded-r-lg">
-                      <h4 className="font-bold text-gray-900">Session 8: Presentation & Final Project</h4>
-                      <p className="text-sm text-gray-600 mt-1 arabic-text" dir="rtl">العرض والمشروع النهائي</p>
-                      <ul className="mt-2 text-sm text-gray-700 space-y-1">
-                        <li>• Business presentation skills</li>
-                        <li>• Pitch delivery techniques</li>
-                        <li>• Final assessment & evaluation</li>
-                        <li>• Program certification ceremony</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 flex justify-end">
-              <button
-                onClick={() => setShowSyllabusModal(false)}
-                className="bg-arabi-green text-white px-6 py-2 rounded-lg hover:bg-arabi-green/90 transition font-semibold"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Modal Download Resources */}
-      {showResourcesModal && (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
-            {/* Modal Header */}
-            <div className="bg-gradient-to-r from-arabi-orange to-arabi-orange/90 text-white p-6 flex items-center justify-between">
-              <div className="flex items-center">
-                <svg className="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd"/>
-                </svg>
-                <div>
-                  <h2 className="text-2xl font-bold">Downloads & Resources</h2>
-                  <p className="text-sm text-white/80">Access all learning materials - 24 Files Available</p>
-                </div>
-              </div>
-              <button
-                onClick={() => setShowResourcesModal(false)}
-                className="text-white/80 hover:text-white transition"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-
-            {/* Modal Content */}
-            <div className="overflow-y-auto max-h-[calc(90vh-100px)] p-6">
-              <div className="space-y-6">
-                {/* Learning Modules */}
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                    <span className="text-2xl mr-2">📄</span>
-                    Learning Modules (8 files)
-                  </h3>
-                  <div className="space-y-2">
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                      <div key={`module-${num}`} className="bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-arabi-orange rounded-lg p-3 flex items-center justify-between transition group">
-                        <div className="flex items-center flex-1">
-                          <div className="w-10 h-10 bg-arabi-orange/10 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-5 h-5 text-arabi-orange" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900">Module Session {num}.pdf</p>
-                            <p className="text-xs text-gray-500">Learning material for session {num}</p>
-                          </div>
-                        </div>
-                        <button className="bg-arabi-orange/10 group-hover:bg-arabi-orange text-arabi-orange group-hover:text-white px-4 py-2 rounded-lg transition text-sm font-semibold">
-                          Download
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Presentation Slides */}
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                    <span className="text-2xl mr-2">🎯</span>
-                    Presentation Slides (8 files)
-                  </h3>
-                  <div className="space-y-2">
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                      <div key={`slide-${num}`} className="bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-arabi-orange rounded-lg p-3 flex items-center justify-between transition group">
-                        <div className="flex items-center flex-1">
-                          <div className="w-10 h-10 bg-arabi-orange/10 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-5 h-5 text-arabi-orange" fill="currentColor" viewBox="0 0 20 20">
-                              <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900">Presentation Session {num}.pptx</p>
-                            <p className="text-xs text-gray-500">Slides for session {num} lecture</p>
-                          </div>
-                        </div>
-                        <button className="bg-arabi-orange/10 group-hover:bg-arabi-orange text-arabi-orange group-hover:text-white px-4 py-2 rounded-lg transition text-sm font-semibold">
-                          Download
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Audio Resources */}
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
-                    <span className="text-2xl mr-2">🎧</span>
-                    Audio Resources (8 files)
-                  </h3>
-                  <div className="space-y-2">
-                    {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-                      <div key={`audio-${num}`} className="bg-gray-50 hover:bg-orange-50 border border-gray-200 hover:border-arabi-orange rounded-lg p-3 flex items-center justify-between transition group">
-                        <div className="flex items-center flex-1">
-                          <div className="w-10 h-10 bg-arabi-orange/10 rounded-lg flex items-center justify-center mr-3">
-                            <svg className="w-5 h-5 text-arabi-orange" fill="currentColor" viewBox="0 0 20 20">
-                              <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
-                            </svg>
-                          </div>
-                          <div>
-                            <p className="font-semibold text-gray-900">Audio Dialogue Session {num}.mp3</p>
-                            <p className="text-xs text-gray-500">Pronunciation practice for session {num}</p>
-                          </div>
-                        </div>
-                        <button className="bg-arabi-orange/10 group-hover:bg-arabi-orange text-arabi-orange group-hover:text-white px-4 py-2 rounded-lg transition text-sm font-semibold">
-                          Download
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Modal Footer */}
-            <div className="bg-gray-50 px-6 py-4 border-t border-gray-200 flex justify-between items-center">
-              <p className="text-sm text-gray-600">
-                <span className="font-semibold">Total:</span> 24 files available for download
-              </p>
-              <button
-                onClick={() => setShowResourcesModal(false)}
-                className="bg-arabi-orange text-white px-6 py-2 rounded-lg hover:bg-arabi-orange/90 transition font-semibold"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
